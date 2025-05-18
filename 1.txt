@@ -7,7 +7,51 @@ online_learning_app/
 │   ├── index.html
 │   ├── course.html
 └── static/
-    └── style.css
+└── style.css
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ course.title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>{{ course.title }}</h1>
+    <p>{{ course.description }}</p>
+    <button onclick="alert('You are enrolled in {{ course.title }}')">Enroll</button><br><br>
+    <a href="/">Back to Courses</a>
+</body>
+</html>
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f0f4f8;
+}
+
+h1 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+}
+
 
 
 <!DOCTYPE html>
