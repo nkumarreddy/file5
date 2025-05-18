@@ -1,0 +1,11 @@
+pip install flask
+
+online_learning_app/
+│
+├── app.py
+├── templates/
+│   ├── index.html
+│   ├── course.html
+└── static/
+    └── style.css
+
