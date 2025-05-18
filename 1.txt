@@ -9,3 +9,27 @@ online_learning_app/
 └── static/
     └── style.css
 
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+# Sample data
+courses = [
+    {'id': 1, 'title': 'Python Basics', 'description': 'Learn Python from scratch.'},
+    {'id': 2, 'title': 'Machine Learning', 'description': 'Intro to ML algorithms.'},
+    {'id': 3, 'title': 'Web Development', 'description': 'Build websites using HTML, CSS, JS & Flask.'}
+]
+
+@app.route("/")
+def index():
+    return render_template("index.html", courses=courses)
+
+@app.route("/course/<int:course_id>")
+def course_detail(course_id):
+    course = next((c for c in courses if c['id'] == course_id), None)
+    return render_template("course.html", course=course)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
