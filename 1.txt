@@ -9,3 +9,23 @@ online_learning_app/
 └── static/
     └── style.css
 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Learning App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Welcome to the Online Learning Platform</h1>
+    <ul>
+        {% for course in courses %}
+        <li>
+            <a href="/course/{{ course.id }}">{{ course.title }}</a> - {{ course.description }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
